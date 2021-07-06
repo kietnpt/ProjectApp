@@ -1,0 +1,45 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To do list App</title>
+    <link rel="stylesheet" href="../static/bootstrap-4/css/bootstrap.min.css">
+</head>
+<body>
+    <div>
+        <a href="">
+            <img src="../static/images/logo-xanh.png" alt="logo" style="height: 150px;">
+        </a>
+    </div>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+                <a class="nav-link" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" href="/signIn">Sign In</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" href="/signUp">Sign Up</a>
+            </li>
+        </ul>
+    </nav>
+    
+    {% with messages = get_flashed_messages()%}
+    {% if messages%}
+        {% for message in messages %}
+        <div class="alert alert-danger">
+            <strong>Error:</strong>[{{ message }}]
+        </div>
+        {% endfor %}
+    {% endif %}
+    {% endwith %}
+        
+    {% block content %} {% endblock %}
+    <div class="jumbotron text-center" style="margin-bottom: 0; ">
+        <p>Copyright &copy;@2021 by Nguyen Phan Thanh Kiet</p>  
+        </div>
+    </div>
+</body>
+</html>
